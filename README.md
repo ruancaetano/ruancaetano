@@ -32,7 +32,7 @@ I'm a Software Engineer focused on contributing to building a better world throu
     </td>
      <td>
      <!-- Card -->
-      <img height='200' src='https://github-readme-stats.vercel.app/api/top-langs/?username=ruancaetano&layout=compact&theme=dark&count_private=true'>
+      <img height='200' src='https://github-readme-stats.vercel.app/api/top-langs/?username=ruancaetano&count_private=true&layout=compact&theme=dark&hide=html,css'>
     </td>
   </row>
 </table> 
