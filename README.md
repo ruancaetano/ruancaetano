@@ -9,9 +9,9 @@ I'm a Software Engineer focused on contributing to building a better world throu
 ### Some tools 
 
 <a href="https://aws.amazon.com/pt/" title="AWS"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/aws.svg" alt="AWS" width="21px" height="21px"></a>
-<a href="https://go.dev/" title="Go"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/go.svg" alt="Go" width="21px" height="21px"></a>
 <a href="https://www.typescriptlang.org/" title="Typescript"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/typescript-icon.svg" alt="Typescript" width="21px" height="21px"></a>
 <a href="https://nodejs.org/" title="Node.js"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/nodejs-icon.svg" alt="Node.js" width="21px" height="21px"></a>
+<a href="https://go.dev/" title="Go"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/go.svg" alt="Go" width="21px" height="21px"></a>
 <a href="https://nestjs.com/" title="Nestjs"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/nestjs.svg" alt="Nestjs" width="21px" height="21px"></a>
 <a href="https://dev.mysql.com/" title="MySQL"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/mysql.svg" alt="MySQL" width="21px" height="21px"></a>
 <a href="https://www.postgresql.org/" title="Postgres"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/postgresql.svg" alt="Postgres" width="21px" height="21px"></a>
