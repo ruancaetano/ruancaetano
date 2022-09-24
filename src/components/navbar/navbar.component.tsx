@@ -9,20 +9,26 @@ import {
   FiGithub,
   FiX,
   FiAlignJustify,
+  FiMail,
 } from "react-icons/fi";
+
+import { LanguageCodes } from "@enums/language.enum";
 
 import * as Styles from "./navbar.styles";
 import { NavBarProps } from "./navbar.types";
 
 export const NavBar = ({ children }: NavBarProps) => {
   const [drawerOpen, setDrawerOpen] = React.useState<boolean>(false);
+  const [language, setLanguage] = React.useState<LanguageCodes>(
+    LanguageCodes.EN
+  );
   const router = useRouter();
 
   return (
-    <Styles.Container >
+    <Styles.Container>
       <Styles.DrawerButton onClick={() => setDrawerOpen(!drawerOpen)}>
         {drawerOpen ? (
-          <FiX color="white"  size={20} />
+          <FiX color="white" size={20} />
         ) : (
           <FiAlignJustify color="white" size={20} />
         )}
@@ -50,6 +56,22 @@ export const NavBar = ({ children }: NavBarProps) => {
         </Styles.NavBar>
 
         <Styles.Presentation>
+          <Styles.Languages>
+            <p
+              onClick={() => setLanguage(LanguageCodes.EN)}
+              className={language === LanguageCodes.EN ? "selected-language" : ""}
+            >
+              EN
+            </p>
+            <span>|</span>
+            <p
+              onClick={() => setLanguage(LanguageCodes.PT_BR)}
+              className={language === LanguageCodes.PT_BR ? "selected-language" : ""}
+            >
+              PT
+            </p>
+          </Styles.Languages>
+
           <Styles.AvatarWrapper>
             <Image
               src="/images/me.jpeg"
@@ -77,7 +99,18 @@ export const NavBar = ({ children }: NavBarProps) => {
             >
               <FiLinkedin color="#fff" size={25} />
             </a>
+            <a
+              href="mailto:ruansouza_caetano@hotmail.com"
+              target={"_blank"}
+              rel="noopener noreferrer"
+            >
+              <FiMail color="#fff" size={25} />
+            </a>
           </div>
+
+          <p>
+            &quot; Sou apaixonado por tecnologia e tenho como missão impactar positivamente a vida das pessoas através de contribuições em projetos técnicos, colocando em prática os conhecimentos que venho construindo nessa área. &quot;
+          </p>
         </Styles.Presentation>
       </Styles.NavBarDrawer>
 

@@ -4,23 +4,27 @@ import { breakpoints } from "@styles/breakpoints";
 
 export const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
+
+  margin-top: 50px;
 
   & > main {
     flex: 1;
-    background: ${({ theme }) => theme.colors.background};
+  }
+
+  @media ${breakpoints.laptop} {
+    margin: 0;
   }
 `;
 
 export const DrawerButton = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 
   position: absolute;
   top: 10px;
   right: 10px;
 
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
   z-index: 100;
 
@@ -39,27 +43,34 @@ export const DrawerButton = styled.button`
 
 export const NavBarDrawer = styled.div<{ show: boolean }>`
   display: flex;
-  overflow: hidden;
-  background: ${({ theme }) => theme.colors.primary};
+  flex-direction: column;
 
-  flex-wrap: wrap-reverse;
-  width: ${({ show }) => (show ? "70%" : 0)};
+  overflow: hidden;
+  overflow-y: auto;
+
+  width: ${({ show }) => (show ? "100%" : 0)};
+  height: 100vh;
 
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
 
   transition: width 0.1s;
 
+  @media ${breakpoints.tablet} {
+    width: ${({ show }) => (show ? "80%" : 0)};
+  }
+
   @media ${breakpoints.laptop} {
     position: static;
-    display: flex;
 
-    width: 30%;
-    min-width: 400px;
+    flex-direction: row;
 
     flex-wrap: nowrap;
+
+    width: 30%;
+    min-width: 450px;
 
     & > button {
       display: none;
@@ -68,68 +79,109 @@ export const NavBarDrawer = styled.div<{ show: boolean }>`
 `;
 
 export const NavBar = styled.nav`
-  width: 100%;
+  background: ${({ theme }) => theme.colors.secondary};
+
+  height: 60px;
 
   ul {
-    list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    list-style-type: none;
   }
 
   @media ${breakpoints.laptop} {
-    width: 85px;
-    background: ${({ theme }) => theme.colors.background};
+    height: 100%;
+
+    background: ${({ theme }) => theme.colors.primary};
+
+    ul {
+      flex-direction: column;
+
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    width: 120px;
   }
 `;
 
 export const NavBarItem = styled.li<{ current: boolean }>`
-  padding: ${({ theme }) => theme.spacing.unit * 2}px 0;
-
-  border-color: ${({ theme }) => theme.colors.primary};
-  border-style: solid;
-  border-width: 1px 0px 1px 0px;
+  padding: 16px 0;
+  margin: 0 10px;
 
   cursor: pointer;
 
   span {
     display: block;
-    font-size: 12px;
+    font-size: 20px;
+    color: ${({ current, theme }) =>
+      current ? "#fff" : theme.colors.tertiary};
   }
 
   svg {
     display: none;
     margin: 0;
-    padding: ${({ theme }) => theme.spacing.unit}px;
-  }
-
-  span,
-  svg {
-    color: ${({ current, theme }) =>
-      current ? theme.colors.secondary : "#fff"};
+    padding: 8px;
   }
 
   &:hover {
-    svg,
     span {
-      color: ${({ theme }) => theme.colors.secondary};
-      opacity: 0.5;
+      color: ${({ theme, current }) =>
+        current ? "#fff" : theme.colors.tertiary};
+      opacity: ${({ current }) => (current ? 1 : 0.5)};
     }
   }
 
   @media ${breakpoints.laptop} {
+    width: 100%;
+    border-color: ${({ theme }) => theme.colors.secondary};
+    border-style: solid;
+    border-width: 0px 0px 0.5px 0px;
+
+    text-align: center;
+
+    padding: 10x 0;
+    margin: 0;
+
     svg {
       display: inline;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    span,
+    svg {
+      color: ${({ current, theme }) =>
+        current ? "#fff" : theme.colors.tertiary};
+    }
+
+    &:hover {
+      svg,
+      span {
+        color: ${({ theme, current }) =>
+          current ? "#fff" : theme.colors.tertiary};
+        opacity: ${({ theme, current }) => (current ? 1 : 0.5)};
+      }
     }
   }
 `;
 
 export const Presentation = styled.div`
   width: 100%;
+  height: 100%;
 
-  padding: ${({ theme }) => theme.spacing.unit * 6}px
-    ${({ theme }) => theme.spacing.unit}px;
-  background: ${({ theme }) => theme.colors.primary};
+  padding: 8px;
+
+  background: ${({ theme }) => theme.colors.secondary};
 
   text-align: center;
 
@@ -161,7 +213,7 @@ export const Presentation = styled.div`
       }
 
       &:hover {
-        background: ${({ theme }) => theme.colors.secondary};
+        background: ${({ theme }) => theme.colors.tertiary};
         border-radius: 50%;
         opacity: 0.9;
       }
@@ -169,9 +221,45 @@ export const Presentation = styled.div`
   }
 `;
 
+export const Languages = styled.div`
+  margin: 8px;
+
+  padding: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    padding: 0;
+    margin: 0;
+    color: ${({ theme }) => theme.colors.tertiary};
+    cursor: pointer;
+  }
+
+  span {
+    margin: 0 10px;
+  }
+
+  .selected-language {
+    font-weight: bold;
+    color: #fff;
+  }
+
+  p:hover {
+    opacity: 0.5;
+  }
+
+  @media (${breakpoints.laptop}) {
+    margin-bottom: 40px;
+    justify-content: flex-end;
+  }
+`;
+
 export const AvatarWrapper = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 
   margin: auto;
 

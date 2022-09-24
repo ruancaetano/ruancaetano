@@ -2,9 +2,10 @@ import { DefaultTheme } from "styled-components";
 
 export const defaultTheme: DefaultTheme = {
     colors: {
-        background: '#292929',
-        primary: '#4e4e4e',
-        secondary: '#37b4e0'
+        background: '#fff',
+        primary: '#616161',
+        secondary: '#d7d7d7',
+        tertiary: '#bbb',
     },
     spacing: {
         unit: 8,
