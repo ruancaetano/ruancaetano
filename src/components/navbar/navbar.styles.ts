@@ -186,6 +186,7 @@ export const Presentation = styled.div`
   text-align: center;
 
   h1 {
+    font-size: 2.5rem;
     color: #fff;
   }
 
@@ -252,7 +253,7 @@ export const Languages = styled.div`
   }
 
   @media (${breakpoints.laptop}) {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     justify-content: flex-end;
   }
 `;

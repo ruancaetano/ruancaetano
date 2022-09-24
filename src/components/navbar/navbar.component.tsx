@@ -11,6 +11,7 @@ import {
   FiAlignJustify,
   FiMail,
 } from "react-icons/fi";
+import { useTheme } from "styled-components";
 
 import { LanguageCodes } from "@enums/language.enum";
 
@@ -22,15 +23,18 @@ export const NavBar = ({ children }: NavBarProps) => {
   const [language, setLanguage] = React.useState<LanguageCodes>(
     LanguageCodes.EN
   );
+
+  const theme = useTheme();
+
   const router = useRouter();
 
   return (
     <Styles.Container>
       <Styles.DrawerButton onClick={() => setDrawerOpen(!drawerOpen)}>
         {drawerOpen ? (
-          <FiX color="white" size={20} />
+          <FiX color={theme.colors.primary} size={20} />
         ) : (
-          <FiAlignJustify color="white" size={20} />
+          <FiAlignJustify color={theme.colors.primary} size={20} />
         )}
       </Styles.DrawerButton>
 
@@ -59,14 +63,18 @@ export const NavBar = ({ children }: NavBarProps) => {
           <Styles.Languages>
             <p
               onClick={() => setLanguage(LanguageCodes.EN)}
-              className={language === LanguageCodes.EN ? "selected-language" : ""}
+              className={
+                language === LanguageCodes.EN ? "selected-language" : ""
+              }
             >
               EN
             </p>
             <span>|</span>
             <p
               onClick={() => setLanguage(LanguageCodes.PT_BR)}
-              className={language === LanguageCodes.PT_BR ? "selected-language" : ""}
+              className={
+                language === LanguageCodes.PT_BR ? "selected-language" : ""
+              }
             >
               PT
             </p>
@@ -82,7 +90,7 @@ export const NavBar = ({ children }: NavBarProps) => {
           </Styles.AvatarWrapper>
 
           <h1>Ruan Caetano</h1>
-          <p>Software Engeenier</p>
+          <p>Senior Software Engineer</p>
 
           <div id="links">
             <a
@@ -107,10 +115,6 @@ export const NavBar = ({ children }: NavBarProps) => {
               <FiMail color="#fff" size={25} />
             </a>
           </div>
-
-          <p>
-            &quot; Sou apaixonado por tecnologia e tenho como missão impactar positivamente a vida das pessoas através de contribuições em projetos técnicos, colocando em prática os conhecimentos que venho construindo nessa área. &quot;
-          </p>
         </Styles.Presentation>
       </Styles.NavBarDrawer>
 
