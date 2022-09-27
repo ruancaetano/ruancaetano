@@ -40,7 +40,7 @@ jobs:
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
 
-    - name: Buold
+    - name: Build
       run: yarn build
 
     - name: Deploy static site to S3 bucket
