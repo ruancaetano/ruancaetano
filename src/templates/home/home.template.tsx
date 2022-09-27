@@ -1,6 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 import * as Styles from "./home.styles";
 
@@ -101,8 +102,33 @@ export const HomeTemplate = () => {
           projetos, aos quais venho tendo a oportunidade de participar durante
           essa minha jornada, colocando em prática os conhecimentos que venho
           construindo nessa área.
-          <br />
-          <br />
+        </p>
+
+        <Styles.Contacts>
+          <a
+            href="https://github.com/ruancaetano"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
+            <FiGithub color="#fff" size={25} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ruanscaetano/"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
+            <FiLinkedin color="#fff" size={25} />
+          </a>
+          <a
+            href="mailto:ruansouza_caetano@hotmail.com"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
+            <FiMail color="#fff" size={25} />
+          </a>
+        </Styles.Contacts>
+
+        <p>
           <span>
             Dentre as ferramentas que tenho utilizado atualmente estão:
           </span>
