@@ -84,7 +84,7 @@ export const HomeTemplate = () => {
       <Styles.Content>
         <Styles.AvatarWrapper>
           <Image
-            src="/images/me.jpeg"
+            src="https://cdn.ruancaetano.dev/images/me.jpeg"
             alt="Ruan Caetano Image"
             width={200}
             height={200}
