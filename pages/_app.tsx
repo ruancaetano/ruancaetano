@@ -4,7 +4,6 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 
-import { NavBar } from "@components/navbar/navbar.component";
 import { defaultTheme } from "@styles/themes/default.theme";
 
 function App({ Component, pageProps }: AppProps) {
@@ -14,9 +13,7 @@ function App({ Component, pageProps }: AppProps) {
         <title>Ruan Caetano</title>
       </Head>
       <ThemeProvider theme={defaultTheme}>
-        <NavBar>
-          <Component {...pageProps} />
-        </NavBar>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );

@@ -5,13 +5,15 @@ body {
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
-  
-  font-family: 'Lato', sans-serif;
 
-  width: 100%;
+  font-family: "Lato", sans-serif;
+
+  width: 100vw;
   height: 100vh;
 
   overflow-y: hidden;
+
+  font-size: 16px;
 }
 
 a {
@@ -45,5 +47,5 @@ body::-webkit-scrollbar-thumb {
 
 /* set button(top and bottom of the scrollbar) */
 body::-webkit-scrollbar-button {
-  display:none;
+  display: none;
 }

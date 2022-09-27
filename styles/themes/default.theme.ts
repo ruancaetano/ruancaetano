@@ -4,8 +4,7 @@ export const defaultTheme: DefaultTheme = {
     colors: {
         background: '#fff',
         primary: '#616161',
-        secondary: '#d7d7d7',
-        tertiary: '#bbb',
+        secondary: '#bbb'
     },
     spacing: {
         unit: 8,

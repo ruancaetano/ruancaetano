@@ -1,5 +1,7 @@
 import React from "react";
 
+import Image from "next/image";
+
 import * as Styles from "./home.styles";
 
 const mappedTools = [
@@ -79,29 +81,47 @@ const mappedTools = [
 export const HomeTemplate = () => {
   return (
     <Styles.Container>
-      <h1>Hello, I&apos;m Ruan</h1>
+      <Styles.Content>
+        <Styles.AvatarWrapper>
+          <Image
+            src="/images/me.jpeg"
+            alt="Ruan Caetano Image"
+            width={200}
+            height={200}
+          />
+        </Styles.AvatarWrapper>
 
-      <p>
-        Sou apaixonado por tecnologia e tenho como missão impactar positivamente
-        a vida das pessoas, através de contribuições em projetos, aos quais
-        venho tendo a oportunidade de participar durante essa minha jornada,
-        colocando em prática os conhecimentos que venho construindo nessa área. <br /><br />
-        Dentre as ferramentas que tenho utilizado atualmente estão:
-      </p>
-      
-      <div>
-        {mappedTools.map((tool) => (
-          <a
-            key={tool.title}
-            href={tool.link}
-            title={tool.title}
-            target={"_blank"}
-            rel="noopener noreferrer"
-          >
-            <img src={tool.image} alt={tool.title} />
-          </a>
-        ))}
-      </div>
+        <Styles.TitleWrapper>
+          <h1>Hello, I&apos;m Ruan</h1>
+        </Styles.TitleWrapper>
+
+        <p>
+          Sou apaixonado por tecnologia e tenho como missão impactar
+          positivamente a vida das pessoas, através de contribuições em
+          projetos, aos quais venho tendo a oportunidade de participar durante
+          essa minha jornada, colocando em prática os conhecimentos que venho
+          construindo nessa área.
+          <br />
+          <br />
+          <span>
+            Dentre as ferramentas que tenho utilizado atualmente estão:
+          </span>
+        </p>
+
+        <Styles.Skills>
+          {mappedTools.map((tool) => (
+            <a
+              key={tool.title}
+              href={tool.link}
+              title={tool.title}
+              target={"_blank"}
+              rel="noopener noreferrer"
+            >
+              <img src={tool.image} alt={tool.title} />
+            </a>
+          ))}
+        </Styles.Skills>
+      </Styles.Content>
     </Styles.Container>
   );
 };
