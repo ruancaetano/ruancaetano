@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 
 import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { ImWhatsapp } from "react-icons/im";
 
 import { AnimatedTitle } from "./components/animated-title/animated-title.comp";
+import { Contacts } from "./components/contacts/contacts.styles";
 import { CustomParticles } from "./components/custom-particles/custom-particles.comp";
 import { LanguageSelector } from "./components/language-selector/language-selector.comp";
-import { TOOLS } from "./home.constants";
+import { Skills } from "./components/skills/skills.styles";
 import * as Styles from "./home.styles";
 
 export const HomeTemplate = () => {
@@ -33,54 +32,13 @@ export const HomeTemplate = () => {
 
         <Styles.Description>{t("home.goalDescription")}</Styles.Description>
 
-        <Styles.Contacts>
-          <a
-            href="https://github.com/ruancaetano"
-            target={"_blank"}
-            rel="noopener noreferrer"
-          >
-            <FiGithub color="#fff" size={25} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ruanscaetano/"
-            target={"_blank"}
-            rel="noopener noreferrer"
-          >
-            <FiLinkedin color="#fff" size={25} />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=5512997204962&text=Hello%2C%20I%27m%20Ruan"
-            target={"_blank"}
-            rel="noopener noreferrer"
-          >
-            <ImWhatsapp color="#fff" size={25} />
-          </a>
-          <a
-            href="mailto:ruansouza_caetano@hotmail.com"
-            target={"_blank"}
-            rel="noopener noreferrer"
-          >
-            <FiMail color="#fff" size={25} />
-          </a>
-        </Styles.Contacts>
+        <Contacts />
 
         <p>
           <span>{t("home.skillsLabel")}</span>
         </p>
 
-        <Styles.Skills>
-          {TOOLS.map((tool) => (
-            <a
-              key={tool.title}
-              href={tool.link}
-              title={tool.title}
-              target={"_blank"}
-              rel="noopener noreferrer"
-            >
-              <img src={tool.image} alt={tool.title} />
-            </a>
-          ))}
-        </Styles.Skills>
+        <Skills />
       </Styles.Content>
     </Styles.Container>
   );

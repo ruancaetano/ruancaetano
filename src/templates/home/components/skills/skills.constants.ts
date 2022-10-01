@@ -1,4 +1,4 @@
-export const TOOLS = [
+export const skillList = [
   {
     link: "https://aws.amazon.com/pt/",
     title: "AWS",
