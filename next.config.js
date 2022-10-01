@@ -1,14 +1,11 @@
-const { i18n } = require('./next-i18next.config');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  assetPrefix: './',
-  i18n,
+  assetPrefix: "./",
   images: {
     unoptimized: true,
-  }
-}
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { ImWhatsapp } from "react-icons/im";
@@ -12,7 +12,7 @@ import { TOOLS } from "./home.constants";
 import * as Styles from "./home.styles";
 
 export const HomeTemplate = () => {
-  const { t, i18n } = useTranslation("home");
+  const { t } = useTranslation();
 
   return (
     <Styles.Container>
@@ -31,7 +31,7 @@ export const HomeTemplate = () => {
 
         <AnimatedTitle />
 
-        <Styles.Description>{t("goalDescription")}</Styles.Description>
+        <Styles.Description>{t("home.goalDescription")}</Styles.Description>
 
         <Styles.Contacts>
           <a
@@ -65,7 +65,7 @@ export const HomeTemplate = () => {
         </Styles.Contacts>
 
         <p>
-          <span>{t("skillsLabel")}</span>
+          <span>{t("home.skillsLabel")}</span>
         </p>
 
         <Styles.Skills>

@@ -1,7 +1,5 @@
-import { Suspense } from "react";
 import "../styles/globals.css";
 
-import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
@@ -14,13 +12,12 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Ruan Caetano</title>
       </Head>
-      <Suspense fallback="loading">
-        <ThemeProvider theme={defaultTheme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </Suspense>
+
+      <ThemeProvider theme={defaultTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
 
-export default appWithTranslation(App);
+export default App;
