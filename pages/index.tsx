@@ -1,11 +1,17 @@
+import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-
-import type { NextPage } from 'next'
-
-import { HomeTemplate } from '@templates/home'
+import { HomeTemplate } from "@templates/home";
 
 const Home: NextPage = () => {
-  return <HomeTemplate />
-}
+  return <HomeTemplate />;
+};
 
-export default Home
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+    },
+  };
+}
+export default Home;

@@ -1,16 +1,24 @@
 import React from "react";
 
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { ImWhatsapp } from "react-icons/im";
 
+import { AnimatedTitle } from "./components/animated-title/animated-title.comp";
 import { CustomParticles } from "./components/custom-particles/custom-particles.comp";
+import { LanguageSelector } from "./components/language-selector/language-selector.comp";
 import { TOOLS } from "./home.constants";
 import * as Styles from "./home.styles";
 
 export const HomeTemplate = () => {
+  const { t, i18n } = useTranslation("home");
+
   return (
     <Styles.Container>
       <CustomParticles />
+      <LanguageSelector />
+
       <Styles.Content>
         <Styles.AvatarWrapper>
           <Image
@@ -21,17 +29,9 @@ export const HomeTemplate = () => {
           />
         </Styles.AvatarWrapper>
 
-        <Styles.TitleWrapper>
-          <h1>Hello, I&apos;m Ruan</h1>
-        </Styles.TitleWrapper>
+        <AnimatedTitle />
 
-        <p>
-          Sou apaixonado por tecnologia e tenho como missão impactar
-          positivamente a vida das pessoas, através de contribuições em
-          projetos, aos quais venho tendo a oportunidade de participar durante
-          essa minha jornada, colocando em prática os conhecimentos que venho
-          construindo nessa área.
-        </p>
+        <Styles.Description>{t("goalDescription")}</Styles.Description>
 
         <Styles.Contacts>
           <a
@@ -49,6 +49,13 @@ export const HomeTemplate = () => {
             <FiLinkedin color="#fff" size={25} />
           </a>
           <a
+            href="https://api.whatsapp.com/send?phone=5512997204962&text=Hello%2C%20I%27m%20Ruan"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
+            <ImWhatsapp color="#fff" size={25} />
+          </a>
+          <a
             href="mailto:ruansouza_caetano@hotmail.com"
             target={"_blank"}
             rel="noopener noreferrer"
@@ -58,9 +65,7 @@ export const HomeTemplate = () => {
         </Styles.Contacts>
 
         <p>
-          <span>
-            Dentre as ferramentas que tenho utilizado atualmente estão:
-          </span>
+          <span>{t("skillsLabel")}</span>
         </p>
 
         <Styles.Skills>
