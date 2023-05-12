@@ -23,19 +23,3 @@ I'm a Software Engineer focused on contributing to building a better world throu
 <a href="https://reactjs.org/" title="React"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/react.svg" alt="React" width="21px" height="21px"></a>
 <a href="https://zeit.co/next" title="Next.js"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/nextjs.svg" alt="Next.js" width="21px" height="21px"></a>
 <a href="https://graphql.org/" title="GraphQL"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/graphql.svg" alt="GraphQL" width="21px" height="21px"></a>
-
-
-### Nerd stats 
-
-<table align="center">
-  <row>
-    <td>
-      <img height='200' src='https://github-readme-stats.vercel.app/api?username=ruancaetano&show_icons=true&theme=dark&count_private=true'>
-    </td>
-     <td>
-     <!-- Card -->
-      <img height='200' src='https://github-readme-stats.vercel.app/api/top-langs/?username=ruancaetano&count_private=true&layout=compact&theme=dark&hide=html,css'>
-    </td>
-  </row>
-</table> 
-
